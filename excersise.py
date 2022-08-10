@@ -151,3 +151,75 @@ plt.show()
 
 
 
+import numpy as np
+import matplotlib.pyplot as plt
+
+y1 = [22,30,35,35,26]
+y2 = [25,32,30,35,29]
+x_labels = ['G1','G2','G3','G4','G5']
+x1 = np.arange(5)
+width = 0.40
+
+plt.bar(x1-0.2,y1,color="green",width=width,label='Men')
+plt.bar(x1+0.2,y2,color="red",width=width,label='Women')
+plt.xticks(x1,x_labels)
+
+
+
+plt.xlabel("Person")
+plt.ylabel("Scores")
+plt.legend()
+
+plt.title("scores by group and gender")
+plt.show()
+
+
+
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+y = np.array([22.2,17.6,8.8,8,7.7,6.7])
+mylabels = ["Java", "Python", "PHP", "JavaScript", "C#", "C++"]
+
+plt.pie(y, labels = mylabels)
+plt.show()
+
+
+
+
+
+
+import matplotlib.pyplot as plt
+import pandas as pd
+
+df =  pd.read_csv('9_data.csv')
+country_data = df["country"]
+medal_data = df["gold_medal"]
+
+
+plt.pie(medal_data, labels=country_data)
+plt.title("Gold medal achievements of five most successful\n"+"countries in 2016 Summer Olympics")
+plt.show() 
+
+
+
+
+
+
+import matplotlib.pyplot as plt
+
+x = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+m = [88, 92, 80, 89, 100, 80, 60, 100, 80, 34]
+s = [35, 79, 79, 48, 100, 88, 32, 45, 20, 30]
+
+plt.scatter(x, m,label="maths marks")
+plt.scatter(x, s,label="science marks")
+plt.legend(loc='upper right')
+
+plt.xlabel("Marks Range")
+plt.ylabel("Marks Scored")
+plt.title("Scatter plot")
+plt.show() 
